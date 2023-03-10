@@ -250,12 +250,12 @@
                     <span>Бесплатная консультация</span>
                     <p>Оставьте заявку и я перезвоню Вам
                         в течение 10 минут</p>
-                    <form method="get">
+                    <form action="telegram.php" method="POST">
                         <label>
-                            <input type="text" placeholder="Ваше имя">
+                            <input type="text" placeholder="Ваше имя" name="name">
                         </label>
                         <label>
-                            <input type="text">
+                            <input type="text" name="phone">
                         </label>
                         <button type="submit">Получить консултацию</button>
                         <p>Нажимая на кнопку «Получить консультацию», Вы соглашаетесь с <a href="#">политикой обработки персональных данных</a></p>
