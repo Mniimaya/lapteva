@@ -6,43 +6,43 @@
     --light-blue: #7395AE;
     --light-brown: #938E94;
     --brown: #5D5C61;
+    --gray: #F3F3F3;
     --gray-border: #D9D9D9;
+    --red: #98012E;
     --white: #ffffff;
     --main-font: "Open Sans", "Arial", sans-serif;
     --trans: 0.225s cubic-bezier(.215, .61, .355, 1);
 }
 
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
 
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-Regular.woff2') format('woff2') url('OpenSans-Regular.woff') format('woff');
+	src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-Medium.woff2') format('woff2') url('OpenSans-Medium.woff') format('woff');
+	src: url('../fonts/OpenSans-Medium.woff2') format('woff2');
 	font-weight: 500;
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2') url('OpenSans-SemiBold.woff') format('woff');
-	font-weight: 600;
-	font-style: normal;
-}
 
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-Bold.woff2') format('woff2') url('OpenSans-Bold.woff') format('woff');
+	src: url('../fonts/OpenSans-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
 }
-
-
-
 
 *,
 ::after,
@@ -122,12 +122,54 @@ body.lock {
     height: 40px;
     padding: 7px 10px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .button--gold {
     background-color: var(--gold);
     color: var(--white);
+}
+
+.button---blue {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+.button--red {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.title-h2 {
+    font-size: 30px;
+    position: relative;
+    color: var(--light-brown);
+    margin: 0;
+    margin-bottom: 20px;
+    display: inline-block;
+    line-height: 120%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.title-h2::after,
+.title-h2::before {
+    content: "";
+    height: 1px;
+    width: 25px;
+    background-color: var(--light-brown);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+}
+
+.title-h2::after {
+    right: -35px;
+}
+
+.title-h2::before {
+    left: -35px;
 }
 
 
@@ -208,6 +250,7 @@ header {
 .header__menu-list a {
     position: relative;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .header__menu-list a.current-item::after {
@@ -309,6 +352,21 @@ header {
 
 .intro {
     padding-top: 130px;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.intro__bg {
+    position: absolute;
+    filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    inset: 0;
+}
+
+.intro__container {
+    position: relative;
+    z-index: 2;
 }
 
 .intro h2 {
@@ -320,7 +378,7 @@ header {
 }
 
 .intro h2 span:not(.name) {
-    font-size: 36px;
+    font-size: 24px;
 }
 
 .intro h2 span.name {
@@ -344,6 +402,7 @@ header {
     position: relative;
     font-size: 14px;
     line-height: 120%;
+    padding-left: 30px;
 }
 
 .intro__list-advantages li::before {
@@ -356,12 +415,237 @@ header {
     background-size: 18px 14px;
     display: inline-block;
     margin-right: 15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 
 }
 
 .intro__list-advantages li:not(:last-of-type){
     margin-bottom: 20px;
 }
+
+.intro__list-advantages  {
+    margin-bottom: 20px;
+}
+
+.intro__button-callback  {
+    width: 100%;
+    margin-bottom: 35px;
+    max-width: 350px;
+}
+
+.intro__inner-wrapper {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--white);
+    box-shadow: 0px 20px 50px 0px rgb(7 7 7 / 20%);
+}
+
+.intro__inner-list-advantages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.intro__inner-list-advantages li {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro__inner-list-advantages li span {
+    text-align: center;
+}
+
+.intro__inner-list-advantages li svg {
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.services__container {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro {
+    clip-path: polygon(0 0,45.3% 0,calc(45.3% + 24px) 40px,100% 40px,100% 100%,0 100%);
+}
+
+.services__list-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.services__list {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.services__item {
+    flex-shrink: 0;
+}
+
+.guarantees {
+    clip-path: polygon(0 0,45.3% 0,calc(45.3% + 24px) 40px,100% 40px,100% 100%,0 100%);
+}
+
+.guarantees__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.services__item {
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.services__item h3 {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 120%;
+    position: relative;
+    max-width: 150px;
+}
+
+.services__item:nth-child(odd)::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../img/hammer.svg");
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-repeat: no-repeat;
+}
+
+.services__item:nth-child(even)::before {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 35px;
+    background-image: url("../img/contract.svg");
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-repeat: no-repeat;
+}
+
+.services__item h3::after {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background-color: var(--white);
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -15px;
+}
+
+.services__description {
+    font-size: 14px;
+    line-height: 120%;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.services__item button {
+    background-color: var(--white);
+    color: var(--blue);
+    align-self: flex-end;
+}
+
+.guarantees {
+    background-color: var(--gray);
+}
+
+.guarantees__slogan {
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--red);
+    padding: 10px;
+    font-weight: 600;
+    position: relative;
+}
+
+.guarantees__slogan::after {
+    content: "";
+    width: 35px;
+    height: 23px;
+    background-image: url(../img/100.svg);
+    background-size: 35px 23px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.guarantees__text {
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: 400;
+}
+
+.guarantees__about-list li{
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 14px;
+    line-height: 120%;
+    padding-left: 30px;
+}
+
+.guarantees__about-list li::before {
+    content: "";
+    width: 18px;
+    height: 14px;
+    background-image: url(../img/check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px 14px;
+    display: inline-block;
+    margin-right: 15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.guarantees__photo {
+    width: 100%;
+    height: 400px;
+    background-color: var(--light-blue);
+    margin-bottom: 30px;
+}
+
+.guarantees__advantages-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.guarantees__advantages-list li {
+    position: relative;
+    font-size: 14px;
+    line-height: 120%;
+    padding-left: 30px;
+}
+
+.guarantees__advantages-list li::before {
+    
+}
+
 
 @media(min-width: 1280px) {
 
@@ -415,12 +699,15 @@ header {
 
     .header__social-list {
         margin-bottom: 0;
-        margin-right: 10px;
     }
 
     .header__phone-link {
         margin-bottom: 0;
         margin-right: 20px;
+    }
+
+    .header__phone-link span {
+        display: none;
     }
 
     .header__button-callback {
@@ -451,5 +738,20 @@ header {
 
     .intro {
         padding-top: 200px;
+    }
+
+    .intro__inner-list-advantages {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        row-gap: 20px;
+        padding: 20px;
+    }
+
+    .intro__list-advantages li {
+        font-size: 16px;
+    }
+
+    .intro__inner-list-advantages li span {
+        font-size: 16px;
     }
 }
