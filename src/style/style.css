@@ -154,6 +154,10 @@ header {
     height: 58px;
 }
 
+.logo-desk {
+    display: none;
+}
+
 .header__navigation {
     background: rgba(115, 149, 174, 0.6);
     position: absolute;
@@ -198,7 +202,7 @@ header {
     font-size: 20px;
     font-weight: 600;
     line-height: 120%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .header__menu-list a {
@@ -357,4 +361,95 @@ header {
 
 .intro__list-advantages li:not(:last-of-type){
     margin-bottom: 20px;
+}
+
+@media(min-width: 1280px) {
+
+    .container {
+        max-width: 1240px;
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .button-menu {
+        display: none;
+    }
+
+    .header__navigation {
+        position: static;
+        width: auto;
+        height: auto;
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .header__nav-wrapper {
+        display: flex;
+        position: static;
+        width: auto;
+        align-items: center;
+        padding: 0;
+    }
+
+    .header__menu-list {
+        display: flex;
+        margin-right: 20px;
+    }
+
+    .header__menu-list li {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+
+    .header__container {
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    .header__button-callback {
+        order: 2;
+    }
+
+    .header__social-list {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .header__phone-link {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    .header__button-callback {
+        margin-bottom: 0;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10px;
+        background-color: var(--white);
+    }
+
+    .header__logo-link img {
+        width: 246.27px;
+        height: 88px;
+    }
+
+    .logo-mobile {
+        display: none;
+    }
+
+    .logo-desk {
+        display: block;
+    }
+
+    .intro {
+        padding-top: 200px;
+    }
 }
